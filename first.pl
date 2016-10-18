@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+# Work through:
+#https://qntm.org/files/perl/perl.html
+
 use strict;
 use warnings;
 
