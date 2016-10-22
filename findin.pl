@@ -15,7 +15,7 @@ use warnings;
 
 # Check for enough input args
 my $ARGC = scalar @ARGV;
-$ARGC >= 2 or die "Error: not enough arguments.\nUsage is: $0 /path/to/auth.log [ [string1] [string2] ... ]\n";
+$ARGC >= 2 or die "Error: not enough arguments.\nUsage is: $0 /path/to/auth.log string1 [ [string2] [string3] ... ]\n";
 
 # Declare associative array for input strings count
 # Initialize elements to 0
