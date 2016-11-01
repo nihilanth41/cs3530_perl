@@ -16,7 +16,7 @@ my $string = <<'END_HTML';
 <html>
 <head>
 <title>My Web Page</title>
-<script>
+<script lang="foo">
 
 function sayHello() {
 	alert("Hello world!");
@@ -34,9 +34,13 @@ This is my web page.
 </html>
 END_HTML
 
-if($string =~ /<script>([\w|\W|\s|\r]*)<\/script>/)
+# modify so we can look at lang="" field
+# Ex: /<script[^>]*>/ Character class is anything not the '>' character
+#if($string =~ /<script([\s+\w\W])*>([\w|\W|\s|\r]*)<\/script>/)
+if($string =~ /<script([^>]*)>([\w|\W|\s|\r]*)<\/script>/)
 {
 	print "Found\n";
 	print $1 if defined $1;
+	print $2 if defined $2;
 }
 
