@@ -37,7 +37,7 @@ END_HTML
 # modify so we can look at lang="" field
 # Ex: /<script[^>]*>/ Character class is anything not the '>' character
 #if($string =~ /<script([\s+\w\W])*>([\w|\W|\s|\r]*)<\/script>/)
-if($string =~ /<script([^>]*)>([\w|\W|\s|\r]*)<\/script>/)
+if($string =~ /<script\s([^>]*)>([\w|\W|\s|\r]*)<\/script>/)
 {
 	print "Found\n";
 	print $1 if defined $1;
