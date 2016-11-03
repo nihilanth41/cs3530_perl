@@ -17,9 +17,10 @@ print $string, "\n";
 #if($string =~ /([^0|^1]\d{2})-(\d{3})-(\d{4})/)
 
 # ###-###-####
-if($string =~ /([2-9]\d{2})-(\d{3})-(\d{4})/)
+# Dashes could be space, no space, slashes
+if($string =~ /([2-9]\d{2})([\s|\-|\.|\/]?\d{3})[\s|\-|\.|\/]?(\d{4})/)
 {
-	# Dashes could be space, no space, slashes
+
 	#print "$1 $2 $3";
 	print "Valid phone number\n";
 }
