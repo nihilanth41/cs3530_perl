@@ -9,15 +9,16 @@ my $string = shift @ARGV;
 # Detect if str is phone number
 # get area code
 
-print $string, "\n";
+print "\n$string", "\n";
 
 
-
-if($string =~ /^(\([2-9]\d{2}\)|^[2-9]\d{2})([\s|\-|\.|\/]?\d{3})[\s|\-|\.|\/]?(\d{4})/)
+# Match phone number w/ parens () or without
+# Or with -,/," ", 
+if($string =~ /(^\([2-9]\d{2}\)|^[2-9]\d{2})[\s|\-|\.|\/]?(\d{3})[\s|\-|\.|\/]?(\d{4})/)
 {
-
-	#print "$1 $2 $3";
-	print "Valid phone number\n";
+	print "\nValid phone number\n";
+	print "Area code: $1\n" if defined $1;
+	print "Phone num: ", $2.$3, "\n" if(defined $2 && defined $3);
 }
 else
 {
