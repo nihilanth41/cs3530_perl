@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+# Zachary Rump
+# zrrm74@mail.missouri.edu
+
 use strict;
 use warnings;
 
@@ -30,5 +33,8 @@ foreach(@links)
 	print "$_\n";
 }
 
-# Print total number of links found
-print "Total number of links found: $#links\n";
+# $# operator gives the last subscript of an array.
+# Since first subscript is 0 the actual # of elements is $#links+1
+# Alternatively: scalar @links
+print "Total number of links found: ", $#links+1, "\n";
+
