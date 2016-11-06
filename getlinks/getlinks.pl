@@ -20,7 +20,7 @@ close($fh_r);
 
 # Search for <a> tag in all lines in the file
 # and assign the href= contents into a list.
-my @links = $string =~ /<a[^>]*href="([^"]*)"[^>]*>/g;
+my @links = $string =~ /<a\s+[^>]*href="([^"]*)"[^>]*>/g;
 
 # Print each link w/ newline
 foreach(@links)
