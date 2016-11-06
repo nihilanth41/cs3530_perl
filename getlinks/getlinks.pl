@@ -22,6 +22,8 @@ close($fh_r);
 # and assign the href= contents into a list.
 my @links = $string =~ /<a\s+[^>]*href="([^"]*)"[^>]*>/g;
 
+# Sort lexically 
+@links = sort @links;
 # Print each link w/ newline
 foreach(@links)
 {
