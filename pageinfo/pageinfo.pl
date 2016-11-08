@@ -20,6 +20,25 @@ close($fh_r);
 
 # Find and display title
 #my @links = $string =~ /<a\s+[^>]*href="([^"]*)"[^>]*>/g;
-$string =~ /<title>([^<]*)<\/title>/g;
-print $1 if defined $1;
+my @title = $string =~ /<title>([^<]*)<\/title>/g;
+print "Title: \n", "$title[0]\n" if defined $title[0];
+
+my @strong = $string =~ /<strong>([^<]*)<\/strong>/g;
+print "\nStrong tags: \n";
+foreach(@strong)
+{
+	print "$_\n";
+}
+print "Number of contents in strong tags: ", $#strong+1, "\n";
+
+my @headers = $string =~ /<h[1-6]{1}>([^<]*)<\/h[1-6]{1}>/g;
+print "\nContent of headers: \n";
+foreach(@headers)
+{
+
+	print "$_\n";
+}
+print "Number of contents in header tags: ", $#headers+1, "\n";
+
+
 
