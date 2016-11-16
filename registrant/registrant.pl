@@ -1,28 +1,5 @@
 #!/usr/bin/perl
 
-use strict;
-use warnings;
-
-($#ARGV == 0) or die "Usage is: $0 <domainname>\n";
-my $arg = shift;
-$arg = "whois --host=whois.godaddy.com $arg";
-my $lines = `$arg`;
-while($lines =~ m/Registrant/g)
-{
-	print;
-}
-#while($lines =~ /Registrant\s{1}[Name|Phone|Email]{1}:(.*)\n/g)
-#{
-#while($lines =~ /Registrant(.*)/g)
-#{
-#}
-
-# Registrant's name
-# Email
-# Phone number
-
-
-
 #Write a perl program that:
 #- accepts a domain name as a command line parameter
 #- runs the whois command and passes the domain name as a parameter to it
@@ -37,3 +14,16 @@ while($lines =~ m/Registrant/g)
 #Dale Musser
 #+1.5738644230
 #dalemusser@gmail.comh
+
+use strict;
+use warnings;
+
+($#ARGV == 0) or die "Usage is: $0 <domainname>\n";
+
+my $arg = shift;
+my $cmd = "whois --host=whois.godaddy.com $arg";
+my $line = `$cmd`;
+while($line =~ /Registrant\s{1}[Name|Phone|Email]*:([^\n]*)\n/g)
+{
+	print "$1\n" if defined $1;
+}
