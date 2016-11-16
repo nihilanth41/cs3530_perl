@@ -21,7 +21,7 @@ use warnings;
 ($#ARGV == 0) or die "Usage is: $0 <domainname>\n";
 
 my $arg = shift;
-my $cmd = "whois --host=whois.godaddy.com $arg";
+my $cmd = "whois $arg";
 my $line = `$cmd`;
 while($line =~ /Registrant\s{1}[Name|Phone|Email]*:([^\n]*)\n/g)
 {
