@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+# Zachary Rump
+# zrrm74@mail.missouri.edu
+
 #Write a perl program that:
 #- accepts a domain name as a command line parameter
 #- runs the whois command and passes the domain name as a parameter to it
