@@ -1,0 +1,15 @@
+* Tuesday November 29th
+  - Two Sessions new material left
+  - Out of class Exam Friday Dec. 2 - Thu. Dec 8th. 
+** Topics today
+*** ls -la 
+  - Long listing MSB:
+    - d -> directory
+    - p -> unnamed pipe
+    - n -> named pipe
+    - l -> symbolic link
+    - s -> socket
+*** Symlinks and relationship with inode
+    - Hard link points at specific inode
+      - Hard link will 
+
